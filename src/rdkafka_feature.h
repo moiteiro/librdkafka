@@ -72,6 +72,11 @@
 /* >= 2.1.0-IV2: ZSTD compression */
 #define RD_KAFKA_FEATURE_ZSTD 0x800
 
+/* Unit-test mock broker: broker supports everything.
+ * @warning Do NOT forget to update the 'all' bitmask when new features
+ *          are added. */
+#define RD_KAFKA_FEATURE_UNITTEST (0xfff | 0x1000)
+
 int rd_kafka_get_legacy_ApiVersions (const char *broker_version,
 				     struct rd_kafka_ApiVersion **apisp,
 				     size_t *api_cntp, const char *fallback);
